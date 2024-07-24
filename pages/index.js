@@ -11,16 +11,16 @@ export const getStaticProps = async () => {
   const query = gql`
     query {
       videos {
-        createdAt,
-        id,
-        title,
-        description,
-        seen,
-        slug,
-        tags,
+        createdAt
+        id
+        title
+        description
+        seen
+        slug
+        tags
         thumbnail {
           url
-        },
+        }
         mp4 {
           url
         }
@@ -29,7 +29,6 @@ export const getStaticProps = async () => {
 
   const data = await graphqlClient.request(query)
   const videos = data.videos
-  console.log(data)
 
   return {
     props: {
