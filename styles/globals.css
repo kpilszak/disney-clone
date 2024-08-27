@@ -105,3 +105,11 @@ a {
     color-scheme: dark;
   }
 }
+
+.main-video {
+  width: 100vw;
+  height: 30vh;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 50px;
+}
