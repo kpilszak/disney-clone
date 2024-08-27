@@ -37,7 +37,7 @@ export const getStaticProps = async () => {
   }
 }
 
-const Home = () => {
+const Home = ({ videos }) => {
   const randomVideo = (videos) => {
     return videos[Math.floor(Math.random() * videos.length)]
   }
