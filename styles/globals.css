@@ -86,13 +86,14 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: #FFF;
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  background-color: #13151F;
 }
 
 a {
@@ -104,6 +105,10 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.app {
+  margin: 20px;
 }
 
 .main-video {
