@@ -42,7 +42,12 @@ const Home = ({ videos }) => {
   const randomVideo = (videos) => {
     return videos[Math.floor(Math.random() * videos.length)]
   }
+
   
+  const filterVideos = (videos, genre) => {
+    return videos.filter((video) => video.tags.includes(genre))
+  }
+
   return (
     <>
     <div className="app">
@@ -52,14 +57,14 @@ const Home = ({ videos }) => {
       </div>
 
       <div className="video-feed">
-        <Section genre={'Family'} />
-        <Section genre={'Thriller'} />
-        <Section genre={'Classic'} />
-        <Section genre={'Pixar'} />
-        <Section genre={'Marvel'} />
-        <Section genre={'National Geographic'} />
-        <Section genre={'Disney'} />
-        <Section genre={'Star Wars'} />
+        <Section genre={'Family'} videos={filterVideos(videos, 'family')} />
+          <Section genre={'Thriller'} videos={filterVideos(videos, 'thriller')} />
+          <Section genre={'Classic'} videos={filterVideos(videos, 'classic')} />
+          <Section genre={'Pixar'} videos={filterVideos(videos, 'pixar')} />
+          <Section genre={'Marvel'} videos={filterVideos(videos, 'marvel')} />
+          <Section genre={'National Geographic'} videos={filterVideos(videos, 'national-geographic')} />
+          <Section genre={'Disney'} videos={filterVideos(videos, 'disney')} />
+          <Section genre={'Star Wars'} videos={filterVideos(videos, 'star-wars')} />
       </div>
     </div>
     </>
