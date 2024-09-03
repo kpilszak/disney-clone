@@ -45,6 +45,16 @@ export const getServerSideProps = async (pageContext) => {
 
 }
 
+const changeToSeen = async (slug) => {
+    await fetch('/api/changeToSeen', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ slug })
+    })
+}
+
 const Video = ({ video }) => {
     const [watching, setWatching] = useState(false)
     console.log(video)
@@ -54,9 +64,11 @@ const Video = ({ video }) => {
             {!watching && <div className="info">
                 <p>{video.tags.join(', ')}</p>
                 <p>{video.description}</p>
-                <a href="/"><p>go back</p></a>
-                <button className={"video-overlay"} onClick={() => {
-                    watching ? setWatching(false) : setWatching(true)
+                <button 
+                    className={"video-overlay"} 
+                    onClick={() => {
+                        changeToSeen(video.slug)
+                        watching ? setWatching(false) : setWatching(true)
                 }}>PLAY</button>
             </div>}
             {watching && (
