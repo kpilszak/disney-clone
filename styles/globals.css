@@ -170,3 +170,11 @@ a {
   border-radius: 50%;
   margin-left: 10px;
 }
+
+.franchise {
+  width: 20%;
+  height: 100px;
+  background-color: #808080;
+  margin: 5px;
+  border-radius: 10px;
+}
