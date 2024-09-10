@@ -57,7 +57,6 @@ const changeToSeen = async (slug) => {
 
 const Video = ({ video }) => {
     const [watching, setWatching] = useState(false)
-    console.log(video)
     return (
         <>
             {!watching && <img className="video-image" src={video.thumbnail.url} alt={video.title} />}
@@ -65,7 +64,7 @@ const Video = ({ video }) => {
                 <p>{video.tags.join(', ')}</p>
                 <p>{video.description}</p>
                 <button 
-                    className={"video-overlay"} 
+                    className="video-overlay"
                     onClick={() => {
                         changeToSeen(video.slug)
                         watching ? setWatching(false) : setWatching(true)
@@ -76,7 +75,7 @@ const Video = ({ video }) => {
                     <source src={video.mp4.url} type="video/mp4"/>
                 </video>
             )}
-            <div className={"info-footer"}
+            <div className="info-footer"
                 onClick={() => watching ? setWatching(false) : null}
             ></div>
         </>
